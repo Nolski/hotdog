@@ -1,32 +1,196 @@
-<!DOCTYPE html>
-<html>
+<html ng-app="ionicApp">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
-
+    <title>Tabs Example</title>
 
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
-
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
   </head>
-  <body ng-app="starter">
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
-  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
-  <script src="js/base.js"></script>
+
+  <body>
+    
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+             
+    <ion-nav-view></ion-nav-view>
+
+
+    <script id="templates/tabs.html" type="text/ng-template">
+      <ion-tabs class="tabs-icon-top tabs-positive">
+
+        <ion-tab title="Home" icon="ion-home" href="#/tab/home">
+          <ion-nav-view name="home-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="About" icon="ion-ios-information" href="#/tab/about">
+          <ion-nav-view name="about-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Contact" icon="ion-ios-world" ui-sref="tabs.contact">
+          <ion-nav-view name="contact-tab"></ion-nav-view>
+        </ion-tab>
+
+      </ion-tabs>
+    </script>
+
+    <script id="templates/home.html" type="text/ng-template">
+      <ion-view view-title="Home">
+        <ion-content class="padding duration-pane">
+          <h1 class="page-title">Ride duration</h1>
+          <div class="row">
+            <div class="col col-100">
+              <a class="button button-outline button-block button-light" href="#/tab/facts">
+                1 Hour
+              </a>
+              <a class="button button-outline button-block button-light">
+                2 Hour
+              </a>
+              <a class="button button-outline button-block button-light">
+                3 Hour
+              </a>
+              <a class="button button-outline button-block button-light">
+                4 Hour
+              </a>
+              <a class="button button-outline button-block button-light">
+                5 Hour
+              </a>
+              <a class="button button-outline button-block button-light">
+                6 Hour
+              </a>
+            </div>
+          </div>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/facts.html" type="text/ng-template">
+      <ion-view view-title="Facts">
+        <ion-content class="padding mood-pane">
+          <h1 class="page-title">Select a mood</h1>
+          <div class="row">
+            <div class="col col-100">
+              <a class="button button-outline button-block button-light" href="#/tab/relaxed">
+                Relaxed
+              </a>
+              <a class="button button-outline button-block button-light">
+                Romantic
+              </a>
+              <a class="button button-outline button-block button-light" href="#/tab/adventure">
+                Adventure
+              </a>
+              <a class="button button-outline button-block button-light">
+                Contemplative
+              </a>
+              <a class="button button-outline button-block button-light">
+                City
+              </a>
+              <a class="button button-outline button-block button-light">
+                Feeling Lucky
+              </a>
+            </div>
+          </div>
+          <p>
+            <a class="button icon ion-home" style="display:none;" href="#/tab/home"> Home</a>
+          </p>3
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/relaxed.html" type="text/ng-template">
+      <ion-view view-title="Relaxed">
+        <ion-content class="padding relaxed-pane">
+          <div class="row">
+            <div class="col col-80 col-offset-10">
+              <a class="button button-outline button-block button-light" style="margin-bottom: 20px; margin-top: 100px;">
+                Elapsed: 00:20:32
+              </a>
+              <a class="button button-outline button-block button-light">
+                Adventureous
+              </a>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col col-100">
+                <a class="button button-outline button-block button-assertive" style="margin-top: 200px">End</a>
+              </div>
+          </div>
+          <p>
+            <a class="button icon ion-home" style="display:none;" href="#/tab/home"> Home</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/adventure.html" type="text/ng-template">
+      <ion-view view-title="Adventurous">
+        <ion-content class="padding adv-pane">
+          <div class="row">
+            <div class="col col-80 col-offset-10">
+              <a class="button button-outline button-block button-light" style="margin-bottom: 20px; margin-top: 100px;">
+                Elapsed: 00:20:32
+              </a>
+              <a class="button button-outline button-block button-light">
+                Adventureous
+              </a>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col col-100">
+                <a class="button button-outline button-block button-assertive" style="margin-top: 200px">End</a>
+              </div>
+          </div>
+          <p>
+            <a class="button icon ion-home" style="display:none;" href="#/tab/home"> Home</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/about.html" type="text/ng-template">
+      <ion-view view-title="About">
+        <ion-content class="padding">
+          <h3>Create hybrid mobile apps with the web technologies you love.</h3>
+          <p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building highly interactive apps.</p>
+          <p>Built with Sass and optimized for AngularJS.</p>
+          <p>
+            <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/nav-stack.html" type="text/ng-template">
+      <ion-view view-title="Tab Nav Stack">
+        <ion-content class="padding">
+          <p><img src="http://ionicframework.com/img/diagrams/tabs-nav-stack.png" style="width:100%"></p>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script id="templates/contact.html" type="text/ng-template">
+      <ion-view title="Contact">
+        <ion-content>
+          <div class="list">
+            <div class="item">
+              @IonicFramework
+            </div>
+            <div class="item">
+              @DriftyTeam
+            </div>
+          </div>
+        </ion-content>
+      </ion-view>
+    </script>
+
+    <script src="js/app.js"></script>
   </body>
 </html>

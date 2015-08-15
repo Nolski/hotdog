@@ -1,6 +1,6 @@
 /*
 To customize the look and feel of Ionic, you can override the variables
-in ionic's _variables.scss file.
+in ionics _variables.scss file.j
 
 For example, you might change some of the default colors:
 
@@ -13,6 +13,7 @@ $energized:                       #ffc900 !default;
 $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
+
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -21,3 +22,29 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.page-title {
+  font-family: 'Roboto', Arial;
+  color: $light;
+  text-align: center;
+  margin: 60px 0 !important;
+}
+
+.duration-pane {
+  background-image: url('/img/duration.png');
+  background-size: 100%;
+}
+
+.mood-pane {
+  background-image: url('/img/mood.png');
+  background-size: 100%;
+}
+
+.adv-pane {
+  background-image: url('/img/adventerous.png');
+  background-size: 100%;
+}
+
+.relaxed-pane {
+  background-image: url('/img/Chill.png');
+  background-size: 100%;
+}
