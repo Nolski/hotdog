@@ -1,13 +1,26 @@
 
 var map;
+var start =  {lat: 41.71, lng: -87.8};
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center:  {lat: 41.85, lng: -87.65},
-    zoom: 8
+    zoom: 10
   });
+
 
   putMarkers();
 
+  path = findPath(start, 0.5);
+  alert(JSON.stringify(path));
+  var flightPath = new google.maps.Polyline({
+    path: path,
+    geodesic: true,
+    strokeColor: '#FF0000',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+
+  flightPath.setMap(map);
 }
 
 var points = [
@@ -27,7 +40,7 @@ function dist(p1, p2) {
 function putMarkers() {
   for (var pt in points) {
     points[pt].lat -= 0.5;
-    points[pt].lon -= 0.5;
+    points[pt].lng -= 0.5;
     var marker = new google.maps.Marker({
       position: points[pt],
       map: map,
@@ -45,7 +58,7 @@ function findPath(start, maxDist, path) {
     return path;
   }
   if (!path)
-    path = [];
+    path = [start];
   var min = 9999;
   start.visited = true;
   for (var pt in points) {
@@ -66,5 +79,3 @@ function findPath(start, maxDist, path) {
   path.push(minPt);
   return findPath(minPt , maxDist - min, path);
 }
-
-alert(JSON.stringify(findPath({lat: 41.90, lng: -87.50}, 0.2)));
