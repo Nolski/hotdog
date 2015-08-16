@@ -17,11 +17,11 @@ angular.module('ionicApp', ['ionic'])
         }
       }
     })
-    .state('tabs.facts', {
-      url: "/facts",
+    .state('tabs.mood', {
+      url: "/mood",
       views: {
         'home-tab': {
-          templateUrl: "templates/facts.html"
+          templateUrl: "templates/mood.html"
         }
       }
     })
