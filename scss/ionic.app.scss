@@ -12,7 +12,7 @@ $balanced:                        #33cd5f !default;
 $energized:                       #ffc900 !default;
 $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
-$dark:                            #444 !default; 
+$dark:                            #444 !default;
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -29,21 +29,21 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .duration-pane {
-  background-image: url('/img/duration.png');
+  background-image: url('img/duration.png');
   background-size: 100%;
 }
 
 .mood-pane {
-  background-image: url('/img/mood.png');
+  background-image: url('img/mood.png');
   background-size: 100%;
 }
 
 .adv-pane {
-  background-image: url('/img/adventerous.png');
+  background-image: url('img/adventerous.png');
   background-size: 100%;
 }
 
 .relaxed-pane {
-  background-image: url('/img/Chill.png');
+  background-image: url('img/Chill.png');
   background-size: 100%;
 }
