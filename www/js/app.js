@@ -38,7 +38,7 @@ angular.module('ionicApp', ['ionic'])
       url: "/relaxed",
       views: {
         'home-tab': {
-          templateUrl: "templates/relaxed.html"
+          templateUrl: "templates/relaxed.html",
           controller: 'AdvCtrl',
         }
       }
@@ -47,7 +47,7 @@ angular.module('ionicApp', ['ionic'])
       url: "/about",
       views: {
         'about-tab': {
-          templateUrl: "templates/about.html"
+          templateUrl: "templates/about.html",
         }
       }
     })

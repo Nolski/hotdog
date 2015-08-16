@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-var ffwdme = require('ffwdme.js');
 var bower = require('bower');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
