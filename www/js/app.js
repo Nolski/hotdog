@@ -29,7 +29,8 @@ angular.module('ionicApp', ['ionic'])
       url: "/adventure",
       views: {
         'home-tab': {
-          templateUrl: "templates/adventure.html"
+          templateUrl: "templates/adventure.html",
+          controller: 'AdvCtrl',
         }
       }
     })
@@ -38,6 +39,7 @@ angular.module('ionicApp', ['ionic'])
       views: {
         'home-tab': {
           templateUrl: "templates/relaxed.html"
+          controller: 'AdvCtrl',
         }
       }
     })
@@ -73,4 +75,9 @@ angular.module('ionicApp', ['ionic'])
 
 .controller('HomeTabCtrl', function($scope) {
   console.log('HomeTabCtrl');
+})
+
+.controller('AdvCtrl', function ($scope) {
+  console.log(startNavigation);
+  startNavigation();
 });

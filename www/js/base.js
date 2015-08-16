@@ -31,7 +31,6 @@ ffwdme.on('geoposition:ready', function() {
     ffwdme.geolocation.last.geoposition.coords.latitude, ",",
     ffwdme.geolocation.last.geoposition.coords.longitude);
   speak("Geolocation ready.");
-  startNavigation();
 });
 
 ffwdme.on('geoposition:update', function() {
